@@ -2,23 +2,29 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="377.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="States.FxController">
+<AnchorPane prefHeight="377.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.ro.upt.ac.pcbe.fxml.FxController">
    <children>
-      <TextFlow layoutX="4.0" layoutY="32.0" prefHeight="68.0" prefWidth="398.0" />
-      <Button layoutX="183.0" layoutY="94.0" mnemonicParsing="false" text="Button" />
-      <Label layoutX="2.0" layoutY="151.0" prefHeight="18.0" prefWidth="178.0" text="Documentatii:" />
-      <Label layoutX="2.0" layoutY="179.0" prefHeight="18.0" prefWidth="168.0" text="Discutii:" />
-      <Label layoutX="1.0" layoutY="210.0" prefHeight="18.0" prefWidth="168.0" text="Label" />
-      <Label layoutX="2.0" layoutY="240.0" prefHeight="18.0" prefWidth="168.0" text="Label" />
-      <Label layoutX="4.0" layoutY="276.0" prefHeight="18.0" prefWidth="168.0" text="Label" />
-      <Button layoutX="368.0" minWidth="30.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="30.0" style="-fx-background-color: red;" text="X" />
-      <Label fx:id="StatusDocumentatie" layoutX="183.0" layoutY="152.0" prefHeight="18.0" prefWidth="228.0" />
-      <Label layoutX="203.0" layoutY="180.0" prefHeight="18.0" prefWidth="206.0" />
-      <Label layoutX="205.0" layoutY="211.0" prefHeight="18.0" prefWidth="216.0" text="Label" />
-      <Label layoutX="203.0" layoutY="241.0" prefHeight="18.0" prefWidth="222.0" text="Label" />
-      <Label layoutX="205.0" layoutY="277.0" prefHeight="18.0" prefWidth="216.0" text="Label" />
+      <Button layoutX="168.0" layoutY="106.0" mnemonicParsing="false" onAction="#onClickStart" prefHeight="26.0" prefWidth="98.0" text="Start" />
+      <Label layoutX="1.0" layoutY="160.0" prefHeight="18.0" prefWidth="178.0" text="Scrierea Domcumentatiei:" />
+      <Label layoutX="1.0" layoutY="201.0" prefHeight="18.0" prefWidth="168.0" text="Discutarea primei versiuni:" />
+      <Label layoutX="1.0" layoutY="240.0" prefHeight="18.0" prefWidth="168.0" text="Trimiterea spre publicare:" />
+      <Label layoutX="1.0" layoutY="280.0" prefHeight="18.0" prefWidth="168.0" text="Publicare pe internet:" />
+      <Label layoutX="-3.0" layoutY="316.0" prefHeight="18.0" prefWidth="185.0" text="Tiparire si trimitere spre client:" />
+      <Button fx:id="Xbutton" layoutX="382.0" layoutY="-2.0" minWidth="47.0" mnemonicParsing="false" onAction="#exit" prefHeight="32.0" prefWidth="47.0" style="-fx-background-color: red;" text="X" />
+      <TextField layoutX="112.0" layoutY="53.0" prefHeight="46.0" prefWidth="210.0" text="Workflow Simulator">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <Label fx:id="LabelA" layoutX="203.0" layoutY="161.0" prefHeight="18.0" prefWidth="74.0" />
+      <Label fx:id="LabelB1" layoutX="200.0" layoutY="201.0" prefHeight="18.0" prefWidth="74.0" />
+      <Label fx:id="LabelC" layoutX="201.0" layoutY="240.0" prefHeight="18.0" prefWidth="74.0" />
+      <Label fx:id="LabelD" layoutX="201.0" layoutY="280.0" prefHeight="18.0" prefWidth="74.0" />
+      <Label fx:id="LabelE" layoutX="201.0" layoutY="316.0" prefHeight="18.0" prefWidth="74.0" />
+      <Label fx:id="LabelB2" layoutX="294.0" layoutY="202.0" prefHeight="18.0" prefWidth="74.0" />
    </children>
 </AnchorPane>
