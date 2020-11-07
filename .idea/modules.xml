@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/pcbe-workflow-sim.iml" filepath="$PROJECT_DIR$/pcbe-workflow-sim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PCBE-luig.iml" filepath="$PROJECT_DIR$/PCBE-luig.iml" />
     </modules>
   </component>
 </project>
