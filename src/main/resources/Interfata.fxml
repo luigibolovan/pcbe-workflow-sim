@@ -11,11 +11,11 @@
       <Button layoutX="168.0" layoutY="106.0" mnemonicParsing="false" onAction="#onClickStart" prefHeight="26.0" prefWidth="98.0" text="Start" />
       <Label layoutX="38.0" layoutY="161.0" prefHeight="18.0" prefWidth="178.0" text="Scrierea Domcumentatiei:" />
       <Label layoutX="38.0" layoutY="201.0" prefHeight="18.0" prefWidth="201.0" text="Discutarea primei versiuni:" />
-      <Label layoutX="38.0" layoutY="240.0" prefHeight="18.0" prefWidth="168.0" text="Trimiterea spre publicare:" />
+      <Label layoutX="38.0" layoutY="240.0" prefHeight="18.0" prefWidth="180.0" text="Trimiterea spre publicare:" />
       <Label layoutX="38.0" layoutY="280.0" prefHeight="18.0" prefWidth="168.0" text="Publicare pe internet:" />
       <Label layoutX="38.0" layoutY="316.0" prefHeight="18.0" prefWidth="316.0" text="Tiparire si trimitere spre client:" />
       <Button fx:id="Xbutton" layoutX="382.0" layoutY="-2.0" minWidth="47.0" mnemonicParsing="false" onAction="#exit" prefHeight="32.0" prefWidth="47.0" style="-fx-background-color: red;" text="X" />
-      <TextField layoutX="112.0" layoutY="53.0" prefHeight="46.0" prefWidth="210.0" text="Workflow Simulator">
+      <TextField layoutX="112.0" layoutY="53.0" prefHeight="46.0" prefWidth="235.0" text="Workflow Simulator">
          <font>
             <Font size="21.0" />
          </font>
