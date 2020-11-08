@@ -7,12 +7,13 @@ public class ClientDeliverPhase {
 
     public void run() {
         System.out.println("Delivering to client");
-        WorkflowSystem.setClientDeliverDone(true);
 
         try {
             Thread.sleep(CLIENT_DELIVER_TIME);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        WorkflowSystem.setClientDeliverDone(true);
     }
 }
