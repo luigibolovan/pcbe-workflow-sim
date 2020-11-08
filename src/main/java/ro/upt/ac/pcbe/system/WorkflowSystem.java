@@ -5,19 +5,17 @@ import ro.upt.ac.pcbe.pub.PubTeam;
 
 public class WorkflowSystem {
 
-    private static boolean documentationDone;
-    private static WorkflowSystem systemInstance;
-
-    private static Thread devThread;
-    private static Thread pubThread;
+    private static boolean          documentationDone;
+    private static Thread           devThread;
+    private static Thread           pubThread;
+    private static ProjectPhases    currentState;
+    private static boolean          clientDeliverDone;
+    private static boolean          internetPublishingDone;
 
     private final static DevTeam devTeam = new DevTeam();
     private final static PubTeam pubTeam = new PubTeam();
 
-    private static ProjectPhases currentState;
-    private static boolean clientDeliverDone;
-    private static boolean internetPublishingDone;
-
+    private WorkflowSystem(){ }
 
     public synchronized static boolean isInternetPublishingDone() {
         return internetPublishingDone;
@@ -35,23 +33,12 @@ public class WorkflowSystem {
         WorkflowSystem.clientDeliverDone = clientDeliverDone;
     }
 
-    private WorkflowSystem(){ }
-
-
     public static synchronized ProjectPhases getCurrentState() {
         return currentState;
     }
 
     public static synchronized void setCurrentState(ProjectPhases currentState) {
         WorkflowSystem.currentState = currentState;
-    }
-
-
-    public static WorkflowSystem getInstance(){
-        if(systemInstance == null){
-            systemInstance = new WorkflowSystem();
-        }
-        return systemInstance;
     }
 
     public synchronized static boolean isDocumentationDone() {
@@ -71,15 +58,14 @@ public class WorkflowSystem {
     public static void start() {
         devThread.start();
         pubThread.start();
+    }
 
-        while (getCurrentState() != ProjectPhases.NO_OF_STATES);
-
+    public static void stop() {
         try {
             devThread.join(2000);
             pubThread.join(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 }

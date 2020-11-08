@@ -1,4 +1,4 @@
-package ro.upt.ac.pcbe.interfata;
+package ro.upt.ac.pcbe.ui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,14 +8,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
-        private  double posX,posY;
+    private double posX,posY;
     public static void main(String[] args) {
             Application.launch(args);
     }
 
     @Override
     public void start(final Stage primaryStage) throws Exception {
-        Pane mainPane = FXMLLoader.load(getClass().getResource("/Interfata.fxml"));
+        Pane mainPane = FXMLLoader.load(getClass().getResource("/interfaceXML.fxml"));
         primaryStage.setScene(new Scene(mainPane,435,400));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();

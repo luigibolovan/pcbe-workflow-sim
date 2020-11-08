@@ -23,7 +23,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.5</version>
                 <configuration>
-                    <mainClass>ro.upt.ac.pcbe.interfata.Main</mainClass>
+                    <mainClass>ro.upt.ac.pcbe.ui.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>

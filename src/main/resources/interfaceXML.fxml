@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="377.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.upt.ac.pcbe.ui.FxController">
    <children>
       <Button layoutX="168.0" layoutY="106.0" mnemonicParsing="false" onAction="#onClickStart" prefHeight="26.0" prefWidth="98.0" text="Start" />
-      <Label layoutX="38.0" layoutY="161.0" prefHeight="18.0" prefWidth="178.0" text="Scrierea Domcumentatiei:" />
+      <Label layoutX="38.0" layoutY="161.0" prefHeight="18.0" prefWidth="178.0" text="Scrierea Documentatiei:" />
       <Label layoutX="38.0" layoutY="201.0" prefHeight="18.0" prefWidth="201.0" text="Discutarea primei versiuni:" />
       <Label layoutX="38.0" layoutY="240.0" prefHeight="18.0" prefWidth="180.0" text="Trimiterea spre publicare:" />
       <Label layoutX="38.0" layoutY="280.0" prefHeight="18.0" prefWidth="168.0" text="Publicare pe internet:" />
@@ -20,8 +20,8 @@
             <Font size="21.0" />
          </font>
       </TextField>
-      <Label fx:id="LabelA" layoutX="250.0" layoutY="161.0" prefHeight="18.0" prefWidth="120.0" />
-      <Label fx:id="LabelB1" layoutX="250.0" layoutY="201.0" prefHeight="18.0" prefWidth="120.0" />
+      <Label fx:id="LabelA" layoutX="250.0" layoutY="161.0" prefHeight="18.0" prefWidth="200.0" />
+      <Label fx:id="LabelB1" layoutX="250.0" layoutY="201.0" prefHeight="18.0" prefWidth="200.0" />
       <Label fx:id="LabelC" layoutX="250.0" layoutY="240.0" prefHeight="18.0" prefWidth="120.0" />
       <Label fx:id="LabelD" layoutX="250.0" layoutY="280.0" prefHeight="18.0" prefWidth="120.0" />
       <Label fx:id="LabelE" layoutX="250.0" layoutY="316.0" prefHeight="18.0" prefWidth="120.0" />
