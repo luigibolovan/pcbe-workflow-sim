@@ -38,6 +38,10 @@ O alta constrangere este legata de utilizarea bufferelor finite. In acest caz pr
 ### Solutii
   O solutie a acestui tip de problema de concurenta il reprezinta utilizarea de semafoare si mutex-uri.
   
+  Mutexul va fi adaugat pentru a rezolva problema ce poate aparea atunci cand sunt mai multi produceri si acestia ar adauga obiecte in buffer-ul comun(va permite ca doar un singur producer sa puna in buffer obiecte)
+  
+  Semaforul va fi folosit pentru a putea tine cont de numarul de obiecte din buffer si de spatiile ramase pana la umplerea buffer-ului.
+  
 ```c
 
 mutex buffer_mutex;
@@ -47,34 +51,65 @@ semaphore fillCount = 0;
 // numarul de spatii din buffer - se decrementeaza la adaugarea unui item in buffer
 semaphore emptyCount = BUFFER_SIZE; 
 
-procedure producer() 
+void producer() 
 {
     while (true) 
     {
         item = produceItem();
         down(emptyCount);
         down(buffer_mutex);
-        putItemIntoBuffer(item);
+        add_to_buffer(item);
         up(buffer_mutex);
         up(fillCount);
     }
 }
 
-procedure consumer() 
+void consumer() 
 {
     while (true) 
     {
         down(fillCount);
         down(buffer_mutex);
-        item = removeItemFromBuffer();
+        item = remove_from_buffer();
         up(buffer_mutex);
         up(emptyCount);
-        consumeItem(item);
+        do_something(item);
     }
 }
 ```
 
-
-
 ### Exemplu "*lock ordering deadlock*"
 
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(Main::method1);
+        Thread t2 = new Thread(Main::method2);
+
+        t1.start();
+        t2.start();
+    }
+
+    public static void method1() {
+        synchronized (String.class) {
+            System.out.println("Lock on String.class");
+
+            synchronized (Integer.class) {
+                System.out.println("Lock on Integer.class");
+            }
+        }
+    }
+
+    public static void method2() {
+        synchronized (Integer.class) {
+            System.out.println("Lock on Integer.class");
+
+            synchronized (String.class) {
+                System.out.println("Lock on String.class");
+            }
+        }
+    }
+}
+```
+O situatie care ar putea provoca un *deadlock* este atunci cand thread-ul ```t1``` ar obtine lock-ul pe obiectul de tip String in timpul executiei ```method1()``` si thread-ul ```t2``` ar obtine lock-ul pe obiectul de tip Integer, atunci ambele thread-uri ar astepta release-ul lock-urilor.
